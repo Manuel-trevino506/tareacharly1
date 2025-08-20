@@ -1,4 +1,19 @@
-from src.tarea1 import graficar_senales
+import sys
+from src import examen_p1, examen_p2
+
+def main():
+    if len(sys.argv) < 2:
+        print("Uso: python main.py <nombre_tarea>")
+        sys.exit(1)
+
+    task = sys.argv[1]
+
+    if task == "examen_p1":
+        examen_p1.run()
+    elif task == "examen_p2":
+        examen_p2.run()
+    else:
+        print(f"Tarea '{task}' no encontrada.")
 
 if __name__ == "__main__":
-    graficar_senales()
+    main()
